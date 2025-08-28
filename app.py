@@ -1,10 +1,17 @@
 import google.generativeai as genai
 from flask import Flask, render_template, request, jsonify
+import os
+from dotenv import load_dotenv
 
 app = Flask(__name__)
 
+# Call it
+load_dotenv()
+
 # 🔹 Hardcode your Gemini API key here (temporary for dev)
-genai.configure(api_key="AIzaSyAx7A-u900sDSQBYpXAUvxae4_F-cyENlo")
+genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
+# ipc_json_path = os.getenv("IPC_JSON_PATH")
+
 
 @app.route("/")
 def home():
