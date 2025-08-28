@@ -1,6 +1,4 @@
 flask
 gunicorn
-requests
 python-dotenv
-transformers
-torch
+google-generativeai
